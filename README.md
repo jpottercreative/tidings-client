@@ -1,15 +1,8 @@
-# bromide-drag v1.0 CLIENT
+# tidings v1.0 CLIENT
 
-## Welcome to Bromide Drag
+## Welcome to Tidings
 
-***Bromide Drag:*** Characterized by uneven areas of development due to high concentrations of Bromide around sproket holes of film due to lack of agitation. 
-
----
-Let's get agitated.
-
----
-
-### Bromide Drag v1 is a simple photo gallery builder app!
+### Tidings v1 is a simple photo gallery builder app!
 
 This client is built in React using React Router for most of the navigation, MUI for those cute cute icons, and Redux for that sweet sweet global state management.  Authentication us accomplished through JSON Web Tokens.
 
@@ -20,7 +13,7 @@ Back end coolness is built on Rails with ActiveRecord, sending and serving files
 ## Installation
 Fork and clone the repo, `npm install` and `npm run` will get the client going.
 
-Be sure to go grab the server here: https://github.com/hariseldon27/bromide-drag-server
+Be sure to go grab the server here: 
 
 
 

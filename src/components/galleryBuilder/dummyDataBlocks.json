@@ -1,0 +1,48 @@
+[
+
+       {
+                "block_id": 1,
+                "id": 100,
+                "type":"image",
+                "gallery_id": 1,
+                "text": "",
+                "bgColor": "",
+                "fontColor": "",
+                "font": "",
+                "width": "",
+                "textAlign": "",
+                "image_src": "https://mrjpfiles.s3.us-west-2.amazonaws.com/cyanotype4-TheBuilder.jpg",
+                "imageWidth": "1280",
+                "imageHeight": "720"
+            },
+            {
+                "block_id": 2,
+                "id": 101,
+                "type": "imageText",
+                "gallery_id": 1,
+                "text": "Hello World!",
+                "bgColor": "",
+                "fontColor": "#ffffff",
+                "font": "",
+                "width": "",
+                "textAlign": "",
+                "image_src": "https://mrjpfiles.s3.us-west-2.amazonaws.com/oregon1-color-horiz.jpg",
+                "imageWidth": "1280",
+                "imageHeight": "720"
+            },
+            {
+                "block_id": 3,
+                "id": 102,
+                "type": "text",
+                "gallery_id": 1,
+                "text": "Go away world!",
+                "bgColor": "#ED649B",
+                "fontColor": "#3B8FA1",
+                "font": "",
+                "width": "",
+                "textAlign": "",
+                "image_src": "",
+                "imageWidth": "1280",
+                "imageHeight": "720"
+            }
+] 
