@@ -23,8 +23,13 @@ function TextBlock( { block } ) {
         width } = block
 
     const textItemStyle = {
-        padding: "15px",
-        backgroundColor: "rgba(200,200,200,.7)"
+        padding: "15px 0px 15px 0px",
+        lineHeight: "3",
+        // backgroundColor: "rgba(200,200,200,.7)",
+        // marginTop: "15px"
+        // backgroundColor: "lightgreen",
+        // boxShadow: "10px 0 0 lightgreen, -10px 0 0 lightgreen",
+        textAlign: "center"
     }
     const textTextStyle = {
         
@@ -38,6 +43,7 @@ function TextBlock( { block } ) {
         position: "relative",
         backgroundColor: `#${randomColor}`,
     }
+    console.log(text)
   return (
     <Grid
     container
@@ -47,7 +53,7 @@ function TextBlock( { block } ) {
     style={imageTextBlockStyle}
     >
         <Grid  item xs={6}>
-            <Paper elevation={4}>
+            <Paper elevation={10}>
                 <Typography variant="overline" style={textItemStyle}>{text}</Typography>
             </Paper>
         </Grid>
