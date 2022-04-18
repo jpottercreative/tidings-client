@@ -8,14 +8,14 @@ This client is built in React using React Router for most of the navigation, MUI
 
 Back end coolness is built on Rails with ActiveRecord, sending and serving files to an S3 bucket.
 
+n.b. this project was initially named Bromide Drag and there are still remnants of the original name all over the place - jp 4/18/22
+
 ---
 
 ## Installation
 Fork and clone the repo, `npm install` and `npm run` will get the client going.
 
-Be sure to go grab the server here: 
-
-
+Be sure to go grab the server here: https://github.com/jpottercreative/tidings-server
 
 ---
 ### What's working:
