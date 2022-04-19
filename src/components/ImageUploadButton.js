@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 
 
-function ImageUploadButton( { onImageChange } ) {
+function ImageUploadButton( { onImageChange, isItText } ) {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.user)
   const [uploadImage, setUploadImage] = useState()
@@ -65,7 +65,9 @@ function PreviewBox(){
                 label="upload image"
                 variant="outlined"
                 component="label"
-                color="secondary">
+                color="secondary"
+                disabled={isItText()}
+                >
                     <FileNameDisplay/>
                     <input
                     type="file"

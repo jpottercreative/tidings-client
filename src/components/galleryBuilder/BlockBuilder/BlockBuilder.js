@@ -264,7 +264,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
         justifyContent="space-between"
         alignItems="flex-start">
           <Grid item xs={6}>
-            <ImageUploadButton onImageChange={handleImageAdd} />
+            <ImageUploadButton isItText={isItText} onImageChange={handleImageAdd} />
           </Grid>
           <Grid item xs={6}>
             <Button disabled={formError} variant="outlined" color="pink" onClick={handleSubmit}>Add Block to Gallery</Button>
