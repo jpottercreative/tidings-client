@@ -7,44 +7,27 @@ import SignUp from "./components/SignUp"
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Fade from '@mui/material/Fade';
-
+import HomeLandingWelcome from './components/homepage/HomeLandingWelcome';
 
 function HomePage() {
 const [isSignUpShowing, setIsSignUpShowing] = useState(false)
+const [isWelcomeShowing, setIsWelcomeShowing] = useState(true)
 
 function toggleSignUpClick(){
     setIsSignUpShowing((isSignUpShowing) => isSignUpShowing = !isSignUpShowing)
   }
 
-  const VarTextAlreadyLoggedIn = () => {
-     return "You're already logged in! - log out first"
-  }
-  const VarTextLoginPlz = () => {
-    return "You need to login"
-  }
-  
-  const FadingLoginPlzText = () => {
-    return (
-    <Fade in={!isSignUpShowing}>
-      <Box>
-        <VarTextLoginPlz />
-      </Box>
-    </Fade>
-    )
-  }
 
-  const FadingAlreadyLoggedInText = () => {
-    return (
-    <Fade in={isSignUpShowing}>
-      <Box>
-        <VarTextAlreadyLoggedIn />
-      </Box>
-    </Fade>
-  )
+
+  const WelcomeOrLogin = () => {return isSignUpShowing ? <SignUp/> : <Login/>}
+  
+
+  const homeComponents = {
+    padding: "1em",
+    // backgroundColor: "pink"
   }
-const homeComponents = {
-  padding: "1em",
-  // backgroundColor: "pink"
+function disableWelcome(){
+    setIsWelcomeShowing(false)
 }
 
 
@@ -68,12 +51,12 @@ const homeElevation = 0
           justifyContent="space-around"
           alignItems="center">
             <Grid item xs={12}>
-                {isSignUpShowing ? <SignUp/> : <Login/> }
+             {isWelcomeShowing ? <HomeLandingWelcome isWelcomeShowing={isWelcomeShowing} disableWelcome={disableWelcome} setIsSignUpShowing={setIsSignUpShowing} /> : <WelcomeOrLogin />}
+      
             </Grid>
             <Grid item xs={12} sx={{color: "white"}} >
-              <Button fullWidth variant="contained" onClick={toggleSignUpClick} id="sign_up_toggle" color={isSignUpShowing ? "lightblue" : "pink"}> {isSignUpShowing ? "Log in instead" : "Sign up instead"}</Button>
+              {isWelcomeShowing ? null : <Button fullWidth variant="contained" onClick={toggleSignUpClick} id="sign_up_toggle" color={isSignUpShowing ? "lightblue" : "pink"}> {isSignUpShowing ? "Log in instead" : "Sign up instead"}</Button>}
             </Grid>
-          
         </Grid>
           </Paper>
       </Grid>
