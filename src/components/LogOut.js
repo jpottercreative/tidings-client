@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from "react-redux"
 import { setCurrentUser, loggedIn } from "../reducers/userSlice"
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined'
 import { useNavigate } from 'react-router-dom'
+import Tooltip from '@mui/material/Tooltip';
+
 
 //   import { showSpinner } from '../../reducers/spinnerSlice'
 
 function LogOut() {
     const dispatch = useDispatch()
     let navigate = useNavigate()
-    // const currentUser = useSelector(state => state.user)
+    const isDarkMode = useSelector(state => state.themeToggle.isDarkMode)
     const loggedIn = useSelector(state => state.user.loggedIn)
     // console.log("logging out currentUser:", currentUser)
     function handleLogOut(e){
@@ -48,14 +50,18 @@ function LogOut() {
     function moveMe(){
       navigate("./", {replace: true})
     }
-// console.log(currentUser.token)
+// if logged in: pink, if logged out: darkgrey, if loggedout/dark: light grey
+    const lightDark = !isDarkMode ? "#656565" : "#4c4c4c"
+    const loggedInColor = loggedIn ? "pink" : lightDark
     const logOutIconStyle = {
-      color: loggedIn ? "pink" : "#4c4c4c"
+      color: loggedInColor
     }  
 
   return (
     <Box>
+      <Tooltip title={"logout"}>
       <Button variant="outline" disabled={!loggedIn} onClick={handleLogOut} id="logout-button" name="logout"><ExitToAppOutlinedIcon style={logOutIconStyle} /></Button>
+      </Tooltip>
     </Box>
   )
 }

@@ -71,6 +71,7 @@ function NavButtons() {
           </Button>
       </NavLink>
       </Tooltip>
+      <Tooltip title="profile">
       <NavLink to="/profile" 
         className="nav"
         style={({ isActive }) =>
@@ -80,6 +81,8 @@ function NavButtons() {
             <AccountBoxOutlinedIcon/>
         </Button>
       </NavLink>
+      </Tooltip>
+      <Tooltip title="new gallery">
       <NavLink to={ "/gallery-builder" }
         className="nav"
         style={({ isActive }) =>
@@ -89,6 +92,7 @@ function NavButtons() {
           <AddPhotoAlternateOutlinedIcon />
         </Button>
       </NavLink>
+      </Tooltip>
       {/* <NavLink to="/gallery-presentation" 
         className="nav"
         style={({ isActive }) =>
