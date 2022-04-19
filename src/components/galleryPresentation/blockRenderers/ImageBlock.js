@@ -1,6 +1,5 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 // renders the images in the gallery show
 // takes in the block, and then spits out a full width div

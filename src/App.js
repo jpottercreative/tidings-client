@@ -8,7 +8,8 @@ import Header from './components/Header'
 import HomePage from './HomePage';
 import { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Grid';
-
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import {
   BrowserRouter,
   Routes,
@@ -66,8 +67,8 @@ function App( ) {
         .catch((error) => {
           // console.log(error)
           renderUserError(error)
-          dispatch(showSpinner())
           revoke()
+          dispatch(showSpinner())
         })
   }, [])
 
@@ -177,6 +178,9 @@ const appStyle = {
                           </Paper>
                       </Grid>
                   </Paper>
+                  <Box sx={{position: "absolute", right: "25px", bottom: "25px", size: "80%"}}>
+                    <Typography variant="overline">Made with <a target="_blank" rel="noreferrer" style={{color: "pink", textDecoration: "none"}} href="http://mrjonathanpotter.com/">♥</a> in Oregon</Typography>
+                  </Box>
                   </Grid>
               </Grid>
             <ErrorHandler />

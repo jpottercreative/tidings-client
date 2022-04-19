@@ -13,8 +13,6 @@ import { useDispatch, useSelector } from "react-redux"
 // the isItText prop disables the upload button if we are on a text block
 
 function ImageUploadButton( { onImageChange, isItText } ) {
-  const dispatch = useDispatch()
-  const currentUser = useSelector(state => state.user)
   const [uploadImage, setUploadImage] = useState()
 
   // this version sets a local image state for the preview image via setUpLoadImage
@@ -42,10 +40,6 @@ function FileNameDisplay() {
     }
 }
 
-// const previewStyle = {
-//   width: auto,
-//   display: none
-// }
 
 // maybe refactor this to use image as background ?
 function PreviewBox(){

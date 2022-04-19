@@ -39,8 +39,6 @@ function GalleryFinish() {
       published_on: new Date().toUTCString(),
       coda: coda
     }
-    // console.log("clickfini")
-    // console.log(publishData)
     
     // again we are authorizing based on token
     // we write agains the actual gallery we have started
@@ -56,9 +54,9 @@ function GalleryFinish() {
         // we aren't doing any thing with this yet - again, plug into global
         // useFetch hook would be good to manage errors in real life
         // .then(d => console.log("finished gal back as: ", d))
-        dispatch(showSpinner())
         // after sucess send the user back to the profile
         moveMe()
+        dispatch(showSpinner())
       }
       function moveMe(){
         navigate("/profile", {replace: true})

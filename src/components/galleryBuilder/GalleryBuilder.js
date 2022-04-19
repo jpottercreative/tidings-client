@@ -7,8 +7,6 @@ import GalleryManage from './GalleryManage'
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -23,7 +21,6 @@ import BlockBuilderMessages from './BlockBuilder/BlockBuilderMessages'
 function GalleryBuilder() {
 
   const dispatch = useDispatch()
-  const currentUser = useSelector(state => state.user)
   const {id, title, featured_image_url} = useSelector(state => state.gallery)
   const [userError, setUserError] = useState(false)
   const step = useSelector( state => state.gallery.step )

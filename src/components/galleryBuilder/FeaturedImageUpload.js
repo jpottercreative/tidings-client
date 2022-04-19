@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import { styled } from '@mui/material/styles';
-import { useDispatch, useSelector } from "react-redux"
 
 // this is the image uploader for gallery featured images ONLY
 // it is a rehash of the same uploader in the block-builder
@@ -18,9 +11,6 @@ import { useDispatch, useSelector } from "react-redux"
 // plz refactor the uploader to be a drag and drop, maybe based on this: https://codepen.io/beljems/pen/LYNZYNy
 
 function FeaturedImageUpload( { formError, setFormError, onGalleryStartChange } ) {
-  const dispatch = useDispatch()
-  const currentUser = useSelector(state => state.user)
-  const [userError, setUserError] = useState(false)
   const [uploadImage, setUploadImage] = useState()
 
 

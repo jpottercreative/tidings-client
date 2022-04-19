@@ -1,15 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-
-import Button from '@mui/material/Button';
-import HeroBlock from './HeroBlock';
-import DescriptionBlock from './DescriptionBlock'
-import Paper from '@mui/material/Paper';
-import dummyDataBlocks from '../galleryBuilder/dummyDataBlocks.json'
-import BlockShow from './BlockShow';
 import GalleryCombinator from './GalleryCombinator';
 
 
@@ -19,14 +9,11 @@ import GalleryCombinator from './GalleryCombinator';
 // the three render blocks feels like a good methodology to continue with
 
 function GalleryShow( { open, setOpen, galleryToShow, blocksToShow } ) {
-    const [blocks, setBlocks] = useState([])
     
     const handleClose = () => {
         setOpen(false);
     };
-    const handleToggle = () => {
-        setOpen(!open);
-    };
+
     //this is the holder for the actual gallery show elements
     // these are combined with the gallery combinator component based on block type
     // elements will be:
@@ -57,7 +44,6 @@ function RenderGalleries(){
     )
 }
 
-    // const galleryDetails = galleryToShow[0]
   return (
     <>
         {open ? <RenderGalleries /> : null } 

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { FormControl } from '@mui/material';
-import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from "react-redux"
@@ -96,12 +95,10 @@ function SignUp() {
             dispatch(showSpinner());
           })
           .catch((error) => {
-            //   console.log(error)
             renderUserError(error)
-            // dispatch(showSpinner())
             resetForm()
+            dispatch(showSpinner());
           })
-    //    dispatch(showSpinner());
     }
 
     function renderUserError(error) {

@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import Paper from '@mui/material/Paper';
 import Collapse from '@mui/material/Collapse';
 
 import UserDetails from './UserDetails';
-import UserGalleryList from './UserGalleryList';
 import UserAvatarUpload from './UserAvatarUpload';
 import GalleryPresentation from '../galleryPresentation/GalleryPresentation'
 
@@ -21,7 +18,6 @@ import Link from '@mui/material/Link';
 
 function UserProfile() {
   const [uploaderShowing, setUploaderShowing] = useState(false)
-    const preventDefault = (event) => event.preventDefault();
     const currentUser = useSelector(state => state.user)
 
     const mainContainerStyle = {
@@ -33,7 +29,7 @@ function UserProfile() {
      }
 
      useEffect(() => {
-      currentUser.avatar ? setUploaderShowing(false) : setUploaderShowing(true)
+       currentUser.avatar ? setUploaderShowing(false) : setUploaderShowing(true)
      }, [])
 
      

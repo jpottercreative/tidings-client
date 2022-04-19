@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import ImageTextBlock from './blockRenderers/ImageTextBlock';
 import ImageBlock from './blockRenderers/ImageBlock';
 import TextBlock from './blockRenderers/TextBlock';

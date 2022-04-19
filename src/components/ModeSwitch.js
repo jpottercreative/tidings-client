@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
@@ -12,7 +11,7 @@ import LightOutlinedIcon from '@mui/icons-material/LightOutlined';
 // color mode is held in redux, so it just triggers the global state
 // coolest thing here is that the icon switches from lights on to lights out when you change modes (:
 
-function ModeSwitch( { onModeChange } ) {
+function ModeSwitch( ) {
   const dispatch = useDispatch()
   const isDarkMode = useSelector(state => state.themeToggle.isDarkMode)
 

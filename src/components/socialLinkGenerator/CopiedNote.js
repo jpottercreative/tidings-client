@@ -1,10 +1,6 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from "react-redux"
+import React from 'react'
 import Snackbar from '@mui/material/Snackbar';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
-import Grid from '@mui/material/Grid';
 import MuiAlert from '@mui/material/Alert';
 
 // this just generates a messsage with a snackbar that confirms

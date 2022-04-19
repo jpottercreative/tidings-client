@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { FormControl } from '@mui/material';
-import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from "react-redux"
@@ -81,10 +80,10 @@ function Login(e) {
                 id: authUser.id,
                 avatar: authUser.avatar
             }))
-            dispatch(showSpinner())
             localStorage.setItem("token", authUser.token)
             resetForm()
             moveMe()
+            dispatch(showSpinner())
         })
         .catch((error) => {
             console.log(error)

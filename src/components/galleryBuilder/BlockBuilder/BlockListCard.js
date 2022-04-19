@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 
 // this is the card for each of the gallery blocks in the block builder list
 // would be nice to signal a text block by removing the placeholder image and using

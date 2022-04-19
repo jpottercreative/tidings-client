@@ -17,7 +17,6 @@ import Tooltip from '@mui/material/Tooltip';
 // there is a bit of conditional rendering happening with the icon too
 // it's fun and cute, maybe not perfect, but good
 
-//   import { showSpinner } from '../../reducers/spinnerSlice'
 
 function LogOut() {
     const dispatch = useDispatch()

@@ -1,38 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 
-import Button from '@mui/material/Button';
-
-import TextField from '@mui/material/TextField';
-import Input from '@mui/material/Input';
-
-import { useDispatch, useSelector } from "react-redux"
-import { setStep, setGalleryInEdit } from '../../reducers/gallerySlice'
 import BlockBuilder from './BlockBuilder/BlockBuilder';
 
 // this file  serves the first block builder step before moving to the manage screen
 // renders the block builder to add first block
 
 function GalleryFill( ) {
-
-
-
-  const dispatch = useDispatch()
-
-  function handleBack(e){
-    e.preventDefault()
-    dispatch(setStep("start"))
-  }
-  function handleManage(e){
-    e.preventDefault()
-    dispatch(setStep("manage"))
-  }
 
   return (
 

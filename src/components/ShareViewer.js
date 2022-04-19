@@ -140,13 +140,16 @@ function ShareViewer() {
           aria-describedby="modal-modal-description"
         >
           <Box sx={modalStyle}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              tidings are something you share
+            <Typography id="modal-modal-title" variant="h5" component="h2">
+              tidings: something to share
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              give someone something to smile about, share a tiding.  
+              Tidings was created to make it easy to quickly send a full screen gallery of images to a friend. 
             </Typography>
-            <Button color="pink" onClick={handleSignUpClick}>sign up</Button>
+            <Box>
+              <Button color="pink" onClick={handleSignUpClick}>sign up</Button>
+            </Box>
+
           </Box>
         </Modal>
     </Grid>

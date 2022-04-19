@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import Input from '@mui/material/Input';
 import FeaturedImageUpload from './FeaturedImageUpload';
 import Typography from '@mui/material/Typography';
 import { setCurrentUser } from '../../reducers/userSlice';
@@ -16,13 +15,11 @@ import { showSpinner } from '../../reducers/spinnerSlice'
 // the record returned from the DB becomes the gallery in edit in state
 // then when we move to the next step we just add stuff to the gallery record
 
-function GalleryStart( { userError, setUserError  } ) {
+function GalleryStart(  ) {
 
 
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.user)
-    const gallery = useSelector(state => state.gallery)
-    const isSpinnerShowing = useSelector(state => state.spinner.isSpinnerShowing)
     //this is the gallery we'll start and send to the db
     const [newGalleryEstablish, setNewGalleryEstablish] = useState({
       title: "new gallery", 
@@ -95,6 +92,7 @@ function GalleryStart( { userError, setUserError  } ) {
       .catch((error) => {
         console.log(error)
         renderUserError(error)
+        dispatch(showSpinner());
       });
     }
     //this sets our user error - currently inactive - then logs an error

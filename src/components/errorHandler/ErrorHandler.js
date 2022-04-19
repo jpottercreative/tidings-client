@@ -3,7 +3,6 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useSelector, useDispatch } from "react-redux"
 import { cancelError } from "../../reducers/errorSlice"
-import { useParams } from 'react-router-dom'
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 
 function ErrorHandler() {
@@ -14,7 +13,6 @@ function ErrorHandler() {
     const currentUser = useSelector(state => state.user)
     const error = useSelector(state => state.error)
     const dispatch = useDispatch()
-    const params = useParams()
 
     const handleClose = (e, reason) => {
         if (reason === 'clickaway') {

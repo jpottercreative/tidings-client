@@ -1,13 +1,7 @@
 import React, {useState} from 'react'
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import Button from '@mui/material/Button';
 import GallerySocialShareLink from '../socialLinkGenerator/GallerySocialShareLink';
 import Link from '@mui/material/Link';
 import { grey } from '@mui/material/colors';

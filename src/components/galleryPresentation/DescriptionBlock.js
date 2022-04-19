@@ -1,5 +1,4 @@
 import React from 'react'
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -10,9 +9,6 @@ import Paper from '@mui/material/Paper';
 function DescriptionBlock( { description } ) {
     // console.log(description)
 
-    const descriptionItemStyle = {
-        padding: "15px",
-    }
     const descriptionTextStyle = {
       padding: "15px",
       backgroundColor: "rgba(200,200,200,.7)"

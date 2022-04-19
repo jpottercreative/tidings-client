@@ -2,17 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-
 import GalleryShow from './GalleryShow';
 import GalleryListing from './GalleryListing';
 import { showSpinner } from '../../reducers/spinnerSlice'
 import { setError } from "../../reducers/errorSlice"
 import { setCurrentUser } from '../../reducers/userSlice';
-import LogOut from '../LogOut'
 
 // this is our main container for the gallery presentation
 // it renders a list, and holds the "show" component
@@ -23,15 +17,11 @@ function GalleryPresentation() {
   const [galleryList, setGalleryList] = useState([])
   const [galleryToShow, setGalleryToShow] = useState([{}])
   const [blocksToShow, setBlocksToShow] = useState([])
-  const isSpinnerShowing = useSelector(state => state.spinner.isSpinnerShowing)
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
   
 
-  const handleClose = () => {
-    setOpen(false);
-  };
   const handleToggle = () => {
     setOpen(!open);
   };

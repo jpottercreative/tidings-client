@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
@@ -7,7 +7,6 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';
 import FormHelperText from '@mui/material/FormHelperText';
 import ImageUploadButton from '../../ImageUploadButton';
 import { setShowMessage  } from '../../../reducers/blockMessageSlice';
@@ -24,7 +23,7 @@ import { showSpinner } from '../../../reducers/spinnerSlice'
 // into a global messaging system so we can more easily 
 // give the correct message and color
 
-function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBuilder, handleResetList } ) {
+function BlockBuilder( { handleCloseBlockBuilder, handleResetList } ) {
   const [blockImage, setBlockImage] = useState("")
   const [compactMode, setCompactMode] = useState(true)
   const [formError, setFormError] = useState(false)
@@ -112,17 +111,17 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
       .then((data) => { 
         // console.log("block came back as ", data); 
         dispatch(setStep("manage"))
-        dispatch(showSpinner())
         dispatch(setShowMessage({
           show: true, 
           message: `added block ${data.id} to gallery ${id}`}))
         resetForm()
+        dispatch(showSpinner())
       })
       // if there is an error then send the error info to a handler
       .catch((error) => {
         // console.log(error)
         renderUserError(error)
-        
+        dispatch(showSpinner())
       });
     }
     //this sets our user error - currently inactive - then logs an error

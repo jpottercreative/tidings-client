@@ -8,10 +8,7 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import Chance from 'chance'
 import Collapse from '@mui/material/Collapse';
 import Grid from '@mui/material/Grid';
-import Snackbar from '@mui/material/Snackbar';
 
-
-import RandomLinkStringGenerator from './RandomLinkStringGenerator'
 import CopiedNote from './CopiedNote';
 
 // this is the main holder for the social share stuff

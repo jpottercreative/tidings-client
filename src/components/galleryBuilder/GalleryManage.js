@@ -5,15 +5,14 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
 import Tooltip from '@mui/material/Tooltip';
-import { setStep, setGalleryInEdit } from '../../reducers/gallerySlice'
-import { useDispatch, useSelector } from "react-redux"
-import BlockBuilderMessages from './BlockBuilder/BlockBuilderMessages';
+import { setStep } from '../../reducers/gallerySlice'
+import { useDispatch } from "react-redux"
 
 // renders the gallery that is being worked on
 // also renders the block builder inset so you can add blocks
 // main gallery build page i guess?
 
-function GalleryManage( { userError, setUserError } ) {
+function GalleryManage( ) {
   const dispatch = useDispatch()
   function handleFinish(){
     dispatch(setStep("finish"))

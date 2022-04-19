@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { showSpinner } from '../reducers/spinnerSlice'
 
 // paste these into the component that needs to call the spinner
-// dispatch once to start, again to stop
+// dispatch once to start, again to stop, and again after error catch (three times per full fetch)
 //   import { showSpinner } from '../../reducers/spinnerSlice'
 //   const dispatch = useDispatch()
 //   dispatch(showSpinner());

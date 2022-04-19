@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import Snackbar from '@mui/material/Snackbar';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { setShowMessage } from '../../../reducers/blockMessageSlice'
 import QueueOutlinedIcon from '@mui/icons-material/QueueOutlined';
-import Grid from '@mui/material/Grid';
 import MuiAlert from '@mui/material/Alert';
 
 // this was added as a convenience, and sanity signal for the user
@@ -25,7 +22,6 @@ function BlockBuilderMessages(  ) {
         dispatch(setShowMessage({message: "close", show: false} ))
         
       } 
-    //   console.log(blockMessage)
       const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={6}
          ref={ref} variant="filled" 
