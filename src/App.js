@@ -31,16 +31,14 @@ import NotFound from './components/NotFound';
 function App( ) {
   const dispatch = useDispatch()
   const isDarkMode = useSelector(state => state.themeToggle.isDarkMode)
-  // const currentUser = useSelector(state => state.user)
-  // const isSpinnerShowing = useSelector(state => state.spinner.isSpinnerShowing)
-
 
   useEffect(()=>{
     dispatch(showSpinner());
 
+    //if we are logged in there should be a token in local storage
     const currentToken = localStorage.getItem("token")
-    
-    // console.log("local storage token: ", currentToken)
+    //we use this to check that we are logged in
+    // in the future this move to global useFetch hook and global messaging
 
     fetch('http://127.0.0.1:3000/member-data', {
             method: "GET",
@@ -72,6 +70,8 @@ function App( ) {
         })
   }, [])
 
+  //if we don't have a token, we need to log in again and clear the current user out
+  // again, plz move to global handlers
   function revoke(){
     // console.log("revoking token and redirecting")
     localStorage.removeItem("token")
@@ -87,7 +87,7 @@ function App( ) {
     }))
   }
   
-
+// this is getting closer to our global handler - but currently only fetch errors are in global state
 function renderUserError(error) {
   // console.log("error render", error)
   const newError = {
@@ -99,6 +99,7 @@ function renderUserError(error) {
 
 }
 
+// please make a separate file for this jon, seriously
 const appMode = createTheme({
       palette: {
         mode: isDarkMode ? 'light' : 'dark',
@@ -127,7 +128,9 @@ const appMode = createTheme({
     });
     
 
-
+//I know these inline styles are twice as slow as using styled components
+// but I like them for fast prototyping, will transition to a unified 
+// styled component system in next iteration
 const wrapperStyle = {
   background: isDarkMode ? "linear-gradient(25deg, #2A2B2B 0%, #C28686 290%)" : "linear-gradient(25deg, #2A2B2B 70%, #C28686 290%)",
   minWidth: "100%",
@@ -142,7 +145,9 @@ const appPaper = {
 const appStyle = {
   margin: "6em"
 }
-
+//note on the layout:
+// the main grid starts here in app and should go all the way down
+// everything is built with grid in mind
   return (
     <div id="app">
       <Container style={wrapperStyle} id="app-wrapper">
