@@ -27,6 +27,7 @@ import ErrorHandler from './components/errorHandler/ErrorHandler';
 import ShareViewer from './components/ShareViewer';
 import NotFound from './components/NotFound';
 
+// our main holder for...damn near everything
 
 function App( ) {
   const dispatch = useDispatch()

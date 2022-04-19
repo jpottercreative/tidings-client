@@ -11,6 +11,11 @@ import { setCurrentUser } from "../reducers/userSlice"
 import { showSpinner } from "../reducers/spinnerSlice"
 import { setError } from '../reducers/errorSlice'
 
+// our magical login component
+// pretty much passes the creds from the user to our rails backend
+// if ok it sends back the auth token, which we then set into local storage
+// and curentUser state
+
 function Login(e) {
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -21,6 +26,14 @@ function Login(e) {
         email: "",
         password: ""
     })
+
+        // the local formError state is just done via regex to confirm 
+        // that the user put in something like an email addy - not very strong rn
+        // only validates on text entry and errs the field color - doesn't validate on submit - 
+        // lets the database do validations on email and password - if no good
+        // this takes the 401 and sends to global error handler
+    
+
     function handleLoginFormChange(e){
         e.preventDefault()
         //set form data
@@ -93,6 +106,9 @@ function Login(e) {
             password: ""
             })
     }
+    // an actual connection to our global error handler!
+    // this was an important one to get connected to global error
+    // as the error handler is what signals snackbar alerts
 
     function renderUserError(error) {
         console.log("error render", error)

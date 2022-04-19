@@ -11,6 +11,11 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import FingerprintOutlinedIcon from '@mui/icons-material/FingerprintOutlined';
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 
+// this is the image block on the landing page - only shows when you first arrive
+// if there is a valid token in local storage this component should never appear
+// because we are navigated to profile if we are logged in
+// would be nice if this faded in/out 
+
 function HomeLandingWelcome( { isWelcomeShowing, disableWelcome, setIsSignUpShowing } ) {
 
     const [imageZoom, setImageZoom] = useState("100%")

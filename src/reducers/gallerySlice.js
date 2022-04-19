@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// the gallery that is in the editor
+
 //slice
 const slice = createSlice( {
     name: 'gallery',

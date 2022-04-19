@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// this is the message state for our block builder
+// maybe the start of a core for a global messenger state i think
+
 //slice
 const slice = createSlice( {
     name: 'blockMessage',

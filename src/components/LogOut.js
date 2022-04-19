@@ -7,6 +7,15 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined'
 import { useNavigate } from 'react-router-dom'
 import Tooltip from '@mui/material/Tooltip';
 
+// ahh the ever critical logout button
+// I do a few things (too many probs):
+// send the current token to the server
+// if I get a good logout signal I then 
+// delete the token in local storage 
+// and finally navigate user back to /
+
+// there is a bit of conditional rendering happening with the icon too
+// it's fun and cute, maybe not perfect, but good
 
 //   import { showSpinner } from '../../reducers/spinnerSlice'
 

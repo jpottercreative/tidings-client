@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// global toggle state for the spinner - 
+// i'm not totally sure this is the best way to handle this...
+
 // slice
 const slice = createSlice({
     name: 'spinner',

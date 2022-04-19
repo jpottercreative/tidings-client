@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// the state object for our error handler
+// this could talk to the messenger system to convert codes to colors
+// and pass the message over
+
 //slice
 const slice = createSlice( {
     name: 'error',

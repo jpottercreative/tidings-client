@@ -10,8 +10,10 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from "react-redux"
 
-// this is my favorite of the uploaders I built
-// but even still, it needs to be refactored for drag and drop - see note below
+// this is the image uploader for gallery featured images ONLY
+// it is a rehash of the same uploader in the block-builder
+// needs to be refactored for drag and drop - see note below
+// worth noting: there is no preview image 
 
 // plz refactor the uploader to be a drag and drop, maybe based on this: https://codepen.io/beljems/pen/LYNZYNy
 

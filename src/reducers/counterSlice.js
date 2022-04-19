@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// the best tutorial ever
+
 // slice
 const slice = createSlice({
     name: 'counter',

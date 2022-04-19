@@ -2,7 +2,8 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-
+// currently not in use - when extra options are activated we can 
+// start using this block renderer 
 function ImageTextBlock( {block} ) {
     console.log(block)
     const {

@@ -9,6 +9,9 @@ import Grid from '@mui/material/Grid';
 import Fade from '@mui/material/Fade';
 import HomeLandingWelcome from './components/homepage/HomeLandingWelcome';
 
+// this is the landing page only - shows the welcome screen and our login/signup fields
+// a few bits of silly conditional rendering in here
+
 function HomePage() {
 const [isSignUpShowing, setIsSignUpShowing] = useState(false)
 const [isWelcomeShowing, setIsWelcomeShowing] = useState(true)

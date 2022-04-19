@@ -8,7 +8,8 @@ import Chip from '@mui/material/Chip';
 import { useDispatch, useSelector } from "react-redux"
 
 
-
+// shows our featured image at the top of the template
+// nothing special here - just takes a bunch of props and renders a big image
 
 
 function HeroBlock( { galleryDetails } ) {
@@ -16,6 +17,8 @@ function HeroBlock( { galleryDetails } ) {
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.user)
     // console.log(featured_image)
+
+    //this would be much nicer if it was a styled component, don't you think?
 const heroImgStyle = {
     width: "100%",
     padding: 0,

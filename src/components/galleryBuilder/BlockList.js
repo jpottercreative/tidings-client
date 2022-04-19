@@ -21,7 +21,8 @@ import { v4 as uuidv4 } from 'uuid';
 import dummyDataBlocks from './dummyDataBlocks.json'
 
 // this component renders our list of blocks during the gallery build
-// 
+// also writes the updated blocks to the DB
+// each block is added separately so our whole gallery is always in sync
 
 function BlockList( {  } ) {
   const [blockListInEdit, setBlockListInEdit] = useState([])
@@ -95,7 +96,8 @@ function handleResetList(){
   minWidth: "250px"
  }
 
-//  Put our cute little bb in a basket
+//  Put our cute little bb in a basket (or box)
+// reason for this is that we have a hide/close button
  const BlockBuilderInset = () => {
    return (
         <Box >
@@ -109,7 +111,7 @@ function refreshTimer(){
 }
  const rotaterStyle = refreshing ? "rotateMe" : ""
 
-
+// prevent the map from erroring out - only map over the array if there is something in it!
  const blockListCards = gallery.id === 0 ? null : blockListInEdit.map(block => <BlockListCard key={uuidv4()} block={block} /> )
   return (
     <Stack 

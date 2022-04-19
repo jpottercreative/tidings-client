@@ -5,7 +5,9 @@ import { setCurrentUser } from "../../reducers/userSlice"
 import { setError } from '../../reducers/errorSlice'
 import { showSpinner } from '../../reducers/spinnerSlice'
 
-
+// wanted to try and work this in as a custom hook
+// didn't get it working, but its pretty close
+// really, I ran out of time
 export const useRevoke = () => {
     const dispatch = useDispatch()
     let navigate = useNavigate()

@@ -1,5 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// this is the whole reason for using redux in this project
+// keeps our logged in user in state so we can reference them
+// in any component - most importantly it lets us refer to the 
+// token associated with this user - although looking at it now, 
+// could probably remove the token from state, and rely fully on the 
+// local storage version - or even better, can we store the token
+// in cookies as an encryprted version?  Then we skip token in state completely
+
 //slice
 const slice = createSlice( {
     name: 'user',

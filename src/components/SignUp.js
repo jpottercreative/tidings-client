@@ -12,6 +12,11 @@ import { showSpinner } from "../reducers/spinnerSlice"
 import { useNavigate } from 'react-router-dom'
 import { setError } from "../reducers/errorSlice"
 
+// signup component that does small amount of validation on front end
+// text entry validation simply confirms it looks like an email
+// submit validation confirms that its formed like an email - but not that its a real one
+// db doesn't currently do any more validation beyond this either - user can signup with 
+// something that is not real like i@jo.ui
 
 function SignUp() {
     const dispatch = useDispatch()
@@ -68,6 +73,7 @@ function SignUp() {
             },
             body: JSON.stringify(userToSignUp)
         })
+        // track the response code and handle the jsonification if its ok
         .then((response) => {
             let json = response.json()
             if (response.status >= 200 && response.status < 300) {
@@ -76,6 +82,7 @@ function SignUp() {
             return json.then(Promise.reject.bind(Promise))
             // return Promise.reject(response)
         })
+        // this sets the newly created user in state and proceeds them to the app/profile
           .then((authUser) => {
               console.log(authUser)
             dispatch(setCurrentUser({

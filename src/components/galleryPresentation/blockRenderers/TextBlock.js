@@ -4,6 +4,9 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
+// this just presents our text in a call-out block
+// and fills the bg with a random color that cycles on reload
+// add sizing, color, etc options when those are activated on the backend
 
 function TextBlock( { block } ) {
     const {

@@ -15,7 +15,11 @@ import { useNavigate } from 'react-router-dom'
 
 import Modal from '@mui/material/Modal';
 
-
+// this is the component that is rendered on the shareable side
+// fetches the gallery based on its shareable URL then renders a GalleryShow 
+// pretty stripped out - both purposefully and also out of time constraints
+// I'd like the layout to be tightened up
+// 
 
 function ShareViewer() {
     const [open, setOpen] = useState(false)
@@ -33,7 +37,11 @@ function ShareViewer() {
         goFetch()
     }
 
-    //fetch based on params
+    // fetch based on params
+    // the logical abstraction that has to happen here is that we are on *a different* location than the server
+    // so, the params here are then used as the search key in the server
+    // since the idea here is that they are a social-friendly link, we intentionally *don't* make a RESTful route
+    // the gallery builder is restful, but the shareside is not
     function goFetch(){
         fetch(`http://localhost:3000/share/${params.id}/`)
         .then((response) => {

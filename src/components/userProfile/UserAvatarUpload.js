@@ -14,6 +14,12 @@ import { setUserAvatar } from "../../reducers/userSlice"
 import { showSpinner } from "../../reducers/spinnerSlice"
 
 
+//this was my very first upload component
+// i didn't refactor it mostly as a learning tool to come back to
+// works fine - does what it needs
+// refactor this to match the other two *facepalm*
+// actually make a global upload component please
+
 function UserAvatarUpload() {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.user)
@@ -66,7 +72,9 @@ const handleSubmit = e => {
       renderUserError(error)
     });
   }
-  //this sets our user error - currently inactive - then logs an error
+  // this is to set errors - but it's not currently plugged into the global
+  // error handler, initially built just to handle form errors locally - which doesn't do anything any more
+  
   function renderUserError(error){
     setUserError(true)
     console.log('Oops... ', error.statusText)

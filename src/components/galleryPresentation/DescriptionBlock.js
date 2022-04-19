@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
+// pretty basic - takes in the gallery description
+// presents it in a block
 
 function DescriptionBlock( { description } ) {
     // console.log(description)

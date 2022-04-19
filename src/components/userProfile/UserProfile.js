@@ -14,7 +14,10 @@ import GalleryPresentation from '../galleryPresentation/GalleryPresentation'
 
 import Link from '@mui/material/Link';
 
-
+// our main user profile container
+// holds the sidebar: deetz/avatar and image uploader
+// holds the main container of the gallery list
+// check that sweet conditional conditional render - can someone give me tips on a three-condition inline render?
 
 function UserProfile() {
   const [uploaderShowing, setUploaderShowing] = useState(false)
@@ -57,7 +60,7 @@ function UserProfile() {
               </Grid>
               <Grid item xs={12}>
                 <Paper sx={{padding: "1em", color: "pink"}} elevation={0}>
-                  {/* has avatar: hide upload boxes, show link to  expand upload button to patch*/}
+                  {/* has avatar: hide upload boxes, show link to expand upload button to patch*/}
                   {/* no avatar: show upload boxes */}
                   {currentUser.avatar ? <Link color="secondary" underline="hover" onClick={handleToggleUploader}>{uploaderShowing ?  "collapse..." : "upload new image?"}</Link> : "Upload a profile photo"}
                   <Collapse in={uploaderShowing} >

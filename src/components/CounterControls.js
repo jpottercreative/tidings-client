@@ -2,6 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { decrement, increment, toggleRunning, incrementBy } from "./counterSlice.js"
 
+// so tempted to put this in as an easter egg
 function CounterControls() {
     const dispatch = useDispatch()
     console.log(dispatch)

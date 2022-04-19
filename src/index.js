@@ -9,6 +9,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShareViewer from './components/ShareViewer';
 // import bromideMainTheme from "./themes/bromideTheme"
 
+// the main index - pretty standard
+// note the Provider tags to give global scope to the redux store
+
+// this has the theme and create theme in here - but i'm not sure they are working
+// please go over the theme issues and clean out unnecesarry styling code
+
 const container = document.getElementById('app');
 // Create a root.
 const root = createRoot(container);

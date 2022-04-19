@@ -7,6 +7,8 @@ import galleryReducer from "./reducers/gallerySlice";
 import errorReducer from "./reducers/errorSlice";
 import blockMessageReducer from "./reducers/blockMessageSlice";
 
+// all our reducers in one place
+
 const store = configureStore({
     reducer: {
         'counter': counterReducer,

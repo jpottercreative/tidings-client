@@ -13,6 +13,18 @@ import Snackbar from '@mui/material/Snackbar';
 
 import RandomLinkStringGenerator from './RandomLinkStringGenerator'
 import CopiedNote from './CopiedNote';
+
+// this is the main holder for the social share stuff
+// this component does a few things:
+// - holds state for all the cute animations
+// - generates a random string on load
+// - if gallery already has a share URL set, just shows that
+// - if gallery does not have share URL set, it sets it to the random string
+// - give the user the share URL
+// - also lets you copy the whole URL (only displays the stub)
+// - after copy it gives you a message telling you 
+// LOTS of conditional logic in the copy text here - many paths to trace
+// would love to refactor this component - globalize and re-use?
  
 function GallerySocialShareLink( { share_url, gallery_id } ) {
   const chance = new Chance()
@@ -22,6 +34,7 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
   const [showShare, setShowShare] = useState(false)
   const [copied, setCopied] = useState(false)
   
+  //initialize our state
   useEffect(() => {
     setNewShareLink(share_url || `http://localhost:3006/share/${makeRandomStr()}`)
     setIsShareable((isShareable) => share_url ? true : false)
@@ -44,6 +57,7 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
 
   const currentToken = localStorage.getItem("token")
 
+  // combine all the stuff above and patch the gallery with the new link
   function updateGallery(gallery_id) {
     
     const update = {
@@ -64,12 +78,13 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
           setTimeout(() => {setShowLoading(false)}, 1500)
         })
   }
+  // copy that sharelink - this works because the DB holds the full URL as a field
   function handleCopy(){
     console.log("Copied")
     navigator.clipboard.writeText(newShareLink)
     setCopied(true)
   }
-
+// this presents our actual string plus icon, and is clickable for copy
   function ShareableReturn(){
     const copyIcon = <FileCopyIcon color={copied ? "lightgreen" : "black"} fontSize="small"/>
     const linkToRender = `...${newShareLink.substring(27)}`
@@ -113,14 +128,15 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
       
     }
 
+    // dev note left in for posterity and clarity:
   // three states to switch beteen: 
   // showing url || showing generate button || or temporarily showing loading...  
   // default is either: share_url (if in record) OR the generate link button
   // if share_url is visible state is "sharable"
   // click on generate button puts in 2 second state of:
   // loading...
-  // after click on generate button set state to "generating"
-  // third state is "newly_sharable" ?? 
+  // after click on generate button set state to "shareable"
+  // and render the random link string and copy icon 
 
   return (
   <Box sx={{flexGrow: 1}}>

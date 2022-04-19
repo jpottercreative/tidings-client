@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Chance from 'chance'
 
+// couldn't get this consistently working as a separate component
+// moved the logic into GallerySocialShareLink file
+// sorry
+
 function RandomLinkStringGenerator( { length, stringReturn, handleGenerate } ) {
     const chance = new Chance()
     const [string, setString] = useState("")

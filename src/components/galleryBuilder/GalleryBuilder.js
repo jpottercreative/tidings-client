@@ -35,7 +35,7 @@ function handleChangeStep(e){
   dispatch(setStep(e.target.name))
 }
 
-//this was originally for breadcrumbs, so I left it as crummy
+//this was originally for breadcrumbs, so I left it as crummy - not it holds stepsIndicator
 function Crummy(){
   return (  
     <Grid 

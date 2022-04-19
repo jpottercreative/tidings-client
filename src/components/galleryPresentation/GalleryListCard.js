@@ -12,6 +12,10 @@ import GallerySocialShareLink from '../socialLinkGenerator/GallerySocialShareLin
 import Link from '@mui/material/Link';
 import { grey } from '@mui/material/colors';
 
+
+// our gallery list card - this is what appears on the user profile
+// would be nice to modify the bg color based on darkmode switch?
+
 function GalleryListCard( { gallery, onGalleryPlay } ) {
     const { description, title, id, featured_image_url, share_url  } = gallery
     const handlePlayClick = (e) => {

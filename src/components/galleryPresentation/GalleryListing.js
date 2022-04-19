@@ -5,7 +5,9 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-
+// this lives in the user profile page - renders our list of gallery cards
+// only renders the 5 most recent galleries
+// conditional notes based on the number of galleries a user has
 
 function GalleryListing( { galleryList, onGalleryPlay } ) {
   // console.log(galleryList[0].blocks)

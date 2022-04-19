@@ -7,13 +7,18 @@ import Button from '@mui/material/Button';
 
 import { useDispatch, useSelector } from "react-redux"
 
-
+// this is the most complete of the image uploaders on the site
+// even still, it should be refactored for drag/drop
+// preview image is generated automatically 
+// the isItText prop disables the upload button if we are on a text block
 
 function ImageUploadButton( { onImageChange, isItText } ) {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.user)
   const [uploadImage, setUploadImage] = useState()
 
+  // this version sets a local image state for the preview image via setUpLoadImage
+  // then sets the file in the block builer newBlock object via onImageChange
   
 function handleImageChange(e){
     // console.log(e.target.files[0].name)
@@ -41,6 +46,8 @@ function FileNameDisplay() {
 //   width: auto,
 //   display: none
 // }
+
+// maybe refactor this to use image as background ?
 function PreviewBox(){
   if (uploadImage) {
     const previewUrl = URL.createObjectURL(uploadImage)

@@ -7,7 +7,8 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline'
 import Grid from '@mui/material/Grid';
 import MuiAlert from '@mui/material/Alert';
 
-
+// this just generates a messsage with a snackbar that confirms
+// you copied your text - not needed, just a nice user-sanity check
 function CopiedNote( { copied, setCopied } ) {
 
 

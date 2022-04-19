@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 
 import Spinner from '../../components/Spinner';
 
+// this was/is going to be the homepage features section - didn't quite get there
+
 function HomeFeatures() {
     const dispatch = useDispatch()
     const isSpinnerShowing = useSelector(state => state.spinner.isSpinnerShowing)

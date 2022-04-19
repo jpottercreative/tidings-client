@@ -8,6 +8,10 @@ import { toggleDarkMode } from "../reducers/themeToggleSlice"
 import LightIcon from '@mui/icons-material/Light';
 import LightOutlinedIcon from '@mui/icons-material/LightOutlined';
 
+// i change the app from light to dark mode
+// color mode is held in redux, so it just triggers the global state
+// coolest thing here is that the icon switches from lights on to lights out when you change modes (:
+
 function ModeSwitch( { onModeChange } ) {
   const dispatch = useDispatch()
   const isDarkMode = useSelector(state => state.themeToggle.isDarkMode)

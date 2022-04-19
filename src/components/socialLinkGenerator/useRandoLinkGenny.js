@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Chance from 'chance'
 
+
+// another custom hook that I didn't spend the time to get working
+// but an easier way to see how the link generator works
+
 const  useRandoLinkGenny = () =>  {
     const chance = new Chance()
     const [string, setString] = useState("")

@@ -8,9 +8,11 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 
-
-
 import { useDispatch, useSelector } from "react-redux"
+
+// this is our user-details sidebar / feature
+// when the mailer is setup on the backend enable the 
+// delete account and reset password buttons
 
 function UserDetails() {
     const currentUser = useSelector(state => state.user)

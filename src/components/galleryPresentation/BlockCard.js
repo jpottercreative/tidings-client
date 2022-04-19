@@ -6,6 +6,9 @@ import ImageTextBlock from './blockRenderers/ImageTextBlock';
 import ImageBlock from './blockRenderers/ImageBlock';
 import TextBlock from './blockRenderers/TextBlock';
 
+// this is how we sort through and pick a block renderer based on block type
+
+
 function BlockCard( { block } ) {
   const {
     block_type,
@@ -28,8 +31,9 @@ function BlockCard( { block } ) {
         width: "100%"
     }
 
-    //create block card that can be either full or boxed - start full?
-    // start with getting text and image, then settings
+    // currently only image and text are the blocks in use
+    // when I get around to programatically using all the other 
+    // settings possible in the DB then the ImageTextBlock can render
 
     function BlockRender() {
             switch (block_type) {

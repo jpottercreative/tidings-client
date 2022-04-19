@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// just global darkmode state - makes it suuuper simple
+
 // slice
 const slice = createSlice({
     name: 'themeToggle',

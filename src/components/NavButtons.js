@@ -9,6 +9,12 @@ import { useDispatch, useSelector } from "react-redux"
 import { setStep, setGalleryInEdit } from "../reducers/gallerySlice"
 import Tooltip from '@mui/material/Tooltip';
 
+// all our buttons for navigation!
+// added tooltips at the last minute to illustrate what they do, but those
+// are giving me forwardRef errors now, so I might rethink the placement of those.
+// lots of conditional rendering based on color scheme, logged in, etc here
+// i'm pretty happy with this, even if it throws errs currently
+
 function NavButtons() {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.user)
@@ -93,6 +99,7 @@ function NavButtons() {
         </Button>
       </NavLink>
       </Tooltip>
+      {/* the presentation area was supposed to be its own section */}
       {/* <NavLink to="/gallery-presentation" 
         className="nav"
         style={({ isActive }) =>
