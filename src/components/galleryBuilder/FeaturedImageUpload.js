@@ -10,7 +10,10 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from "react-redux"
 
+// this is my favorite of the uploaders I built
+// but even still, it needs to be refactored for drag and drop - see note below
 
+// plz refactor the uploader to be a drag and drop, maybe based on this: https://codepen.io/beljems/pen/LYNZYNy
 
 function FeaturedImageUpload( { formError, setFormError, onGalleryStartChange } ) {
   const dispatch = useDispatch()
@@ -29,46 +32,7 @@ function handleImageChange(e){
 const handleSubmit = () =>{}
 
 
-// const handleSubmit = e => {
-//   e.preventDefault();
-//   const formData = new FormData()
-//   formData.append("featuredImage", uploadImage)
-//   fetch(`http://localhost:3000/new-photo/${currentUser.id}`, {
-//     method: 'POST',
-//     headers: {
-//       "Authorization": `Bearer ${currentUser.token}`
-//       },
-//     body: formData
-//   })
-//     // .then(res => res.json())
-//   .then((response) => {
-//     if (response.ok) { 
-//      return response.json();
-//     }
-//     return Promise.reject(response); 
-//   })
-//     // if resp.ok then we proceed to set onLogin
-//     // reset the field text, and setUserError to false
-//     .then((data) => { 
-//       console.log("featured image came back as ", data); 
-//       // console.log(data.user)
-//       // console.log(data.avatar)
-
-//     })
-//     // if there is an error then send the error info to a handler
-//     .catch((error) => {
-//       console.log(error)
-//       renderUserError(error)
-//     });
-//   }
-//   //this sets our user error - currently inactive - then logs an error
-//   function renderUserError(error){
-//     setUserError(true)
-//     console.log('Oops... ', error.statusText)
-//   }
-
-  // plz refactor the uploader to be a drag and drop, maybe based on this: https://codepen.io/beljems/pen/LYNZYNy
-
+// this sets the text on the button to our file name if it exists for user sanity
 function FileNameDisplay() {
     if (uploadImage) {
         let displayText = uploadImage.name

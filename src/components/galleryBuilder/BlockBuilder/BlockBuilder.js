@@ -16,13 +16,23 @@ import { useDispatch, useSelector } from "react-redux"
 import Collapse from '@mui/material/Collapse';
 import { showSpinner } from '../../../reducers/spinnerSlice'
 
+// this componen holds the bits to create new blocks
+// needs to be broken up desparately
+// lots of conditional rendering in here, plus need to move the 
+// the fetch to a global custom useFetch hook - also this 
+// component has it's own messaging system, need to plug this
+// into a global messaging system so we can more easily 
+// give the correct message and color
+
 function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBuilder, handleResetList } ) {
   const [blockImage, setBlockImage] = useState("")
   const [compactMode, setCompactMode] = useState(true)
   const [formError, setFormError] = useState(false)
 
+  // this is our block, note DOES NOT contain the image link, because that is a separate
+  // piece that is tacked on during the fetch - I did this just b/c it was easier
   const [newBlock, setNewBlock] = useState ({
-    // does this need gallery id or image?
+    
     text: "Enter block text",
     bgColor: "none",
     fontColor: "#ffffff",
@@ -32,13 +42,13 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
     type: "image"
   })
 
+  // this is the meat of how it works:
+  // get our user, and the gallery we are working on
+  // then we know who and which gallery to associate the block with
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.user)
   const id = useSelector(state => state.gallery.id)
 
-  // useEffect(() => {
-  //   console.log(Object.entries(newBlock))
-  // }, [newBlock])
   
   function handleFormChange(e){
     // debugger
@@ -64,6 +74,9 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
     dispatch(setStep("manage"))
   }
 
+
+  // construct a formData object from our newBlock obj and the image file
+  // proceed that new formData object to the server as one - render image conditionally tho
   const handleSubmit = e => {
     dispatch(showSpinner())
     // console.log('hello')
@@ -71,6 +84,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
     // console.log("clicked add block")
     const formData = new FormData()
     formData.append("gallery_id", id)
+    //make sure image is written conditionally - if we send "undefined" it errs on backend - thanks javascript...
     if (blockImage) formData.append("image", blockImage)
     formData.append("text", newBlock.text)
     formData.append("bg_color", newBlock.bgColor)
@@ -127,6 +141,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
       setCompactMode((compactMode) => compactMode = !compactMode)
     }
 
+    //this is our function to signal fields to disable based on block type
     const isItText = () => {
       if (newBlock.type === "text") {
         return true

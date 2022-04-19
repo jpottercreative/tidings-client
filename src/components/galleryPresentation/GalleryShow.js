@@ -12,6 +12,12 @@ import dummyDataBlocks from '../galleryBuilder/dummyDataBlocks.json'
 import BlockShow from './BlockShow';
 import GalleryCombinator from './GalleryCombinator';
 
+
+// this is our super basic proof of concept gallery show component
+// it is really just a scrollable overlay on the highest z-index
+// you can click it away, which is convenient
+// the three render blocks feels like a good methodology to continue with
+
 function GalleryShow( { open, setOpen, galleryToShow, blocksToShow } ) {
     const [blocks, setBlocks] = useState([])
     
@@ -22,10 +28,11 @@ function GalleryShow( { open, setOpen, galleryToShow, blocksToShow } ) {
         setOpen(!open);
     };
     //this is the holder for the actual gallery show elements
+    // these are combined with the gallery combinator component based on block type
     // elements will be:
-    // 1) hero block - featured image, title, author
-    // 2) blocks (we need 3 templates?  or maybe just styled by props)
-    // 3) coda (is this just a secret block type that only we can select?)
+    // 1) hero block - featured image, title, author?
+    // 2) blocks (three render templates - text, image, image-text)
+    // 3) coda 
 
 const galleryBackdrop = {
     zIndex: (theme) => theme.zIndex.drawer + 1,

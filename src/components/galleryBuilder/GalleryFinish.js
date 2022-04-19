@@ -13,6 +13,11 @@ import { showSpinner } from "../../reducers/spinnerSlice"
 import Loading from '../socialLinkGenerator/Loading';
 import '../socialLinkGenerator/loading.css'
 
+// this takes the gallery we've been working on in state
+// then adds a "coda" which is a text field we require
+// and then adds the coda, sets published to true, and adds a published date
+
+
 function GalleryFinish() {
   const [coda, setCoda] = useState("")
   const [loading, setLoading] = useState(false)
@@ -36,6 +41,9 @@ function GalleryFinish() {
     }
     // console.log("clickfini")
     // console.log(publishData)
+    
+    // again we are authorizing based on token
+    // we write agains the actual gallery we have started
     fetch(`http://127.0.0.1:3000/gallery/${gallery.id}`, {
       method: 'PATCH',
       headers: {
@@ -45,8 +53,11 @@ function GalleryFinish() {
         body: JSON.stringify(publishData),
         })
         .then(r => r.json())
+        // we aren't doing any thing with this yet - again, plug into global
+        // useFetch hook would be good to manage errors in real life
         // .then(d => console.log("finished gal back as: ", d))
         dispatch(showSpinner())
+        // after sucess send the user back to the profile
         moveMe()
       }
       function moveMe(){
@@ -57,6 +68,7 @@ function GalleryFinish() {
     setCoda(e.target.value)
   }
 
+  // this is a css loading animation, it's used a few places
   function LoadingAbsurdity() {
     return loading ? <Loading /> : ""
   }

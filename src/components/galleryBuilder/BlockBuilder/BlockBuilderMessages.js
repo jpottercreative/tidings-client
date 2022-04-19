@@ -8,9 +8,14 @@ import QueueOutlinedIcon from '@mui/icons-material/QueueOutlined';
 import Grid from '@mui/material/Grid';
 import MuiAlert from '@mui/material/Alert';
 
+// this was added as a convenience, and sanity signal for the user
+// should really be plugged into a global message system
 
 function BlockBuilderMessages(  ) {
     const dispatch = useDispatch()
+    // even though this plugs into its own global state it would be better
+    // to wrap these items into a global message state
+
     const blockMessage = useSelector(state => state.blockMessage)
 
     const handleClose = (e, reason) => {
@@ -18,7 +23,7 @@ function BlockBuilderMessages(  ) {
           return;
         }
         dispatch(setShowMessage({message: "close", show: false} ))
-        // console.log("thanks")
+        
       } 
     //   console.log(blockMessage)
       const Alert = React.forwardRef(function Alert(props, ref) {

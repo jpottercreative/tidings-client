@@ -14,6 +14,9 @@ import { setError } from "../../reducers/errorSlice"
 import { setCurrentUser } from '../../reducers/userSlice';
 import LogOut from '../LogOut'
 
+// this is our main container for the gallery presentation
+// it renders a list, and holds the "show" component
+// the list is the 5 most recent galleries, and the "show" is conditionally rendered
 
 function GalleryPresentation() {
   const [open, setOpen] = useState(false);
@@ -32,6 +35,13 @@ function GalleryPresentation() {
   const handleToggle = () => {
     setOpen(!open);
   };
+
+  // we use the gallery id from the clicked button in the list to call it
+  // then toggle the "show" and pass it the gallery you just clicked on
+  // currently it's sending in two phases - the whole gallery obj and the blocks
+  // as a separate state - in future would be nice to send one or the other
+  // maybe re-write serializers on backend
+
   const handleGalleryPlay = (e) => {
 
     handleToggle()
@@ -45,6 +55,9 @@ function GalleryPresentation() {
     setGalleryToShow(galToShow)
   }
 
+  // another master checkpoint for if the user is valid
+  // if not valid token revoke and have user log back in
+  // global custom useFetch hook plz
   const currentToken = localStorage.getItem("token")
   useEffect(() => {
     dispatch(showSpinner());
@@ -73,6 +86,7 @@ function GalleryPresentation() {
     })
   }, [])
 
+  // please move to global manager
   function revoke(){
     // console.log("revoking token and redirecting")
     localStorage.removeItem("token")
@@ -90,6 +104,11 @@ function GalleryPresentation() {
     }))
   }
 
+  // this fetches the blocks for the specific gallery - which is cool, but pretty redundant
+  // went this route becuase it was easier to parse the blocks at top-level, rather than parsing
+  // them out of the gallery object - but perhaps I should just re-write either the handling of the obj
+  // above, or re-write the serializer to *not* send blocks with a gallery?
+  // but I think single server call is better route.  
   function fetchBlocksToShow(e){
     // console.log(e.target.name)
     dispatch(showSpinner());
@@ -119,6 +138,7 @@ function GalleryPresentation() {
     
   })
   }
+  // send the error to the error handler/messenger
   function renderUserError(error) {
     // console.log(error.error.statusText)
     // console.log(error.error.status)
@@ -131,6 +151,8 @@ function GalleryPresentation() {
     dispatch(setError(newError))
   }
 
+  // gallery show only opens/renders when the setOpen is true
+  // setOpen is set to true when you click on ViewGallery
   return (
     
     <div>

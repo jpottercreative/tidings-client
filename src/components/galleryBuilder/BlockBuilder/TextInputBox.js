@@ -10,6 +10,8 @@ function TextInputBox( { bChange, bVal } ) {
 // use bChange for the onChange handler
 // use bVal for the value handlers on controlled forms
 
+
+// I made this and wanted to use it - but it was a pain, so I am just leaving it here
   return (
     <Box>
       <TextareaAutosize

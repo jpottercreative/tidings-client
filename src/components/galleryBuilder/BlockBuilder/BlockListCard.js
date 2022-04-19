@@ -7,6 +7,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
+// this is the card for each of the gallery blocks in the block builder list
+// would be nice to signal a text block by removing the placeholder image and using
+// a random color block in it's place - or perhaps a blue block?  - maybe different
+// block types have a different color association?  
+// be nice to re-write as a styled component
 
 function BlockListCard( { block } ) {
     // console.log(block)

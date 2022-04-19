@@ -8,6 +8,8 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 function TextAlignSelect() {
 
+  // currently not in use - this is mostly an example piece from MUI, but could be worked into the advanced
+  // options as they become available
     // move the state for this up to the editor component this should send align 
     //  string of "left", "center", "justified" or "right" - use a callback fn to send string to set state
     const [alignment, setAlignment] = useState('left');

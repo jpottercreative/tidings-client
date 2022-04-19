@@ -18,6 +18,8 @@ import StepIndicator from './StepIndicator'
 import { setStep } from '../../reducers/gallerySlice'
 import BlockBuilderMessages from './BlockBuilder/BlockBuilderMessages'
 
+// notes for each step in relevant components
+
 function GalleryBuilder() {
 
   const dispatch = useDispatch()

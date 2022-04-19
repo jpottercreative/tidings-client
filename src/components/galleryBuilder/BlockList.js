@@ -20,6 +20,9 @@ import { v4 as uuidv4 } from 'uuid';
 //fake dataset for dev
 import dummyDataBlocks from './dummyDataBlocks.json'
 
+// this component renders our list of blocks during the gallery build
+// 
+
 function BlockList( {  } ) {
   const [blockListInEdit, setBlockListInEdit] = useState([])
   const [blockBuilderShowing, setBlockBuilderShowing] = useState(false)
@@ -32,6 +35,11 @@ function BlockList( {  } ) {
 
  //
   
+ // we run useEffect to get blocks from server and set in state on refresh
+ // uses auth token in local storage, this fetch doesn't kick the user out
+ // if our token is no good, because we are already inside the gallery 
+ // builder - which requires a good token.  But, the coda and publish
+ // function require token auth
   useEffect(() => {
     // debugger
     fetch(`http://localhost:3000/gallery/${gallery.id}/blocks`,{
@@ -47,6 +55,9 @@ function BlockList( {  } ) {
       setBlockListInEdit(d)
     }) 
   }, [])
+
+  // this was mostly for dev, now its redudant - but might be useful
+  // mostly it does a cute spinning animation
 
   function handleRefresh(){
     setRefreshing(true)

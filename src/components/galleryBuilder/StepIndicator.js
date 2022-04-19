@@ -9,6 +9,9 @@ import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import CameraRollOutlinedIcon from '@mui/icons-material/CameraRollOutlined';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 
+// this is our indication of where in the gallery build we are
+// needs more visual references to explain what it is doing for us
+
 function StepIndicator() {
 
   const step = useSelector( state => state.gallery.step )
@@ -20,14 +23,6 @@ function StepIndicator() {
     color:"#cccccc"
   }
 
-  // const colorSwitch = () => {
-  //   const active = {text: "#fec0ca", icon: "pink"}
-  //   const inactive = {text: "#fec0ca", icon: "pink"}
-  //   switch (step) {
-  //     case "start":
-  //       return colors
-  //       break;
-  // }
     return (
         <Grid container
         direction="column"
