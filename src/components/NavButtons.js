@@ -60,7 +60,7 @@ function NavButtons() {
       
       >
         
-      <Tooltip title={currentUser.loggedIn ? currentUser.email : "login plz"}>
+      <Tooltip title={currentUser.loggedIn ? `logged in as ${currentUser.email}` : "login plz"}>
       <NavLink to={currentUser.loggedIn ? "#" : "/"} 
         className="nav"
         style={({ isActive }) =>
@@ -71,7 +71,7 @@ function NavButtons() {
           </Button>
       </NavLink>
       </Tooltip>
-      <Tooltip title="profile">
+      <Tooltip title="profile" >
       <NavLink to="/profile" 
         className="nav"
         style={({ isActive }) =>
