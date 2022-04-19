@@ -4,8 +4,11 @@ import Grid from '@mui/material/Grid';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Input from '@mui/material/Input';
+import Select from '@mui/material/Select';
 import Link from '@mui/material/Link';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
 import ImageUploadButton from '../../ImageUploadButton';
 import { setShowMessage  } from '../../../reducers/blockMessageSlice';
 import { setStep } from '../../../reducers/gallerySlice'
@@ -38,6 +41,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
   // }, [newBlock])
   
   function handleFormChange(e){
+    // debugger
     const name = e.target.name;
     let value = e.target.value;
     // validations for a good time
@@ -122,6 +126,13 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
       e.preventDefault()
       setCompactMode((compactMode) => compactMode = !compactMode)
     }
+
+    const isItText = () => {
+      if (newBlock.type === "text") {
+        return true
+      } 
+      return false
+    }
     const compactComponent = {
       // display: compactMode ? 'none' : 'block'
     }
@@ -143,7 +154,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
               alignItems="flex-start"
               gap={2}>
                 <Grid  item sm={12}  >
-                    <TextField id="new-block-type" 
+                    {/* <TextField id="new-block-type" 
                       label="block type"
                       helperText="image, text"
                       required
@@ -153,7 +164,24 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
                       variant="outlined"
                       color="pink"
                       error={formError}
-                    />
+                    /> */}
+                          <FormHelperText sx={{marginLeft: "2px"}}>block type*</FormHelperText>
+                          <Select
+                            labelId="block-type-select"
+                            id="block-type-select"
+                            value={newBlock.type}
+                            onChange={handleFormChange}
+                            name="type"
+                            variant="outlined"
+                            color="pink"
+                            error={formError}
+                          >
+                            <MenuItem value="image">image</MenuItem>
+                            <MenuItem value="text">text</MenuItem>
+                          </Select>
+
+
+
                 </Grid>
                 <Grid item sm={12} >
                     <TextField id="new-block-text" 
@@ -166,6 +194,7 @@ function BlockBuilder( { userError, setUserError, setRefresh, handleCloseBlockBu
                       color="pink"
                       multiline
                       error={formError}
+                      disabled={!isItText()}
                     />
                   </Grid>
                 </Grid> 
