@@ -18,7 +18,7 @@ function Header() {
     
   const headerStyle = {
     backgroundColor: isDarkMode ? "#666" : "#222",
-
+    borderRadius: "3px 3px 0px 0px",
   }
 
 

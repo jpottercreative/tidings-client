@@ -57,6 +57,7 @@ function NavButtons() {
       spacing={2}
       className="header" 
       id="navStack"
+      
       >
         
       <Tooltip title={currentUser.loggedIn ? currentUser.email : "login plz"}>

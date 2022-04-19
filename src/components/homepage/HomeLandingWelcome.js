@@ -25,37 +25,34 @@ function HomeLandingWelcome( { isWelcomeShowing, disableWelcome, setIsSignUpShow
     <Grid item >
         <Grid container
         justifyContent="center"
+        
         >
-            <Grid item xs={4}>
+            <Grid  item xs={4}>
                 <Fade in={isWelcomeShowing}>
-                <ImageList cols={2}gap={0}>
-                    <ImageListItem >
-                        <img
-                            src={homeImages[0].img}
-                            loading="lazy"
-                        />
-                        <ImageListItemBar onClick={handleLoginClick} 
-                        style={loginItemText} position="top" 
-                        title={homeImages[0].text} 
-                        actionIcon={<FingerprintOutlinedIcon />}/>
-                    </ImageListItem>
+                    <ImageList style={welcomeImagesStyle} cols={2}gap={0}>
+                        <ImageListItem >
+                            <img src={homeImages[0].img} loading="lazy" />
+                            <ImageListItemBar onClick={handleLoginClick} 
+                            style={loginItemText} position="top" 
+                            title={homeImages[0].text} 
+                            actionIcon={<FingerprintOutlinedIcon />}/>
+                        </ImageListItem>
 
-                    <ImageListItem >
-                        <img src={homeImages[1].img} loading="lazy" />
-                    </ImageListItem>
-                    <ImageListItem >
-                        <img src={homeImages[2].img} loading="lazy" />
-                    </ImageListItem>
-                    <ImageListItem >
-                        <img src={homeImages[3].img} loading="lazy" />
-                        <ImageListItemBar onClick={handleSignUpClick} 
-                        style={signUpItemText} 
-                        position="bottom" 
-                        title={homeImages[3].text} 
-                        actionIcon={<AccountBoxOutlinedIcon />} />
-                    </ImageListItem>
-
-                </ImageList>
+                        <ImageListItem >
+                            <img src={homeImages[1].img} loading="lazy" />
+                        </ImageListItem>
+                        <ImageListItem >
+                            <img src={homeImages[2].img} loading="lazy" />
+                        </ImageListItem>
+                        <ImageListItem >
+                            <img src={homeImages[3].img} loading="lazy" />
+                            <ImageListItemBar onClick={handleSignUpClick} 
+                            style={signUpItemText} 
+                            position="bottom" 
+                            title={homeImages[3].text} 
+                            actionIcon={<AccountBoxOutlinedIcon />} />
+                        </ImageListItem>
+                    </ImageList>
                 </Fade>
             </Grid>
         </Grid>
@@ -63,7 +60,9 @@ function HomeLandingWelcome( { isWelcomeShowing, disableWelcome, setIsSignUpShow
   )
 }
 
-
+const welcomeImagesStyle = {
+    borderRadius: "3px"
+}
 
 const loginItemText = {
     textAlign:"left",
