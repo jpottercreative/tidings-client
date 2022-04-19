@@ -33,8 +33,6 @@ function handleChangeStep(e){
   dispatch(setStep(e.target.name))
 }
 
-// console.log('gallerybuilder refresh')
-
 //this was originally for breadcrumbs, so I left it as crummy
 function Crummy(){
   return (  
@@ -73,7 +71,9 @@ function Crummy(){
     }
   }
   //single item in return that is swapped out based on what 'step' we are in in the process
-  // biggest annoyance now is why do we re-render when message clears/gallery.showMessage updates
+  // this seems to work pretty well - not sure if it's best practice, but so far so good
+  // the redux state for gallery in edit and where we are in the process is super helpful 
+  // to making this structure  possible
   return (
     <Box>
       <Grid container

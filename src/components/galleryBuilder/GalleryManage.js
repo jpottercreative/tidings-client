@@ -9,6 +9,10 @@ import { setStep, setGalleryInEdit } from '../../reducers/gallerySlice'
 import { useDispatch, useSelector } from "react-redux"
 import BlockBuilderMessages from './BlockBuilder/BlockBuilderMessages';
 
+// renders the gallery that is being worked on
+// also renders the block builder inset so you can add blocks
+// main gallery build page i guess?
+
 function GalleryManage( { userError, setUserError } ) {
   const dispatch = useDispatch()
   function handleFinish(){

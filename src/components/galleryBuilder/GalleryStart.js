@@ -12,7 +12,13 @@ import { useDispatch, useSelector } from "react-redux"
 import { setStep, setGalleryInEdit } from '../../reducers/gallerySlice'
 import { showSpinner } from '../../reducers/spinnerSlice'
 
+// this component initiates the gallery and creates the record in the db
+// the record returned from the DB becomes the gallery in edit in state
+// then when we move to the next step we just add stuff to the gallery record
+
 function GalleryStart( { userError, setUserError  } ) {
+
+
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.user)
     const gallery = useSelector(state => state.gallery)

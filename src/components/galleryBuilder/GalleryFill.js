@@ -15,7 +15,13 @@ import Input from '@mui/material/Input';
 import { useDispatch, useSelector } from "react-redux"
 import { setStep, setGalleryInEdit } from '../../reducers/gallerySlice'
 import BlockBuilder from './BlockBuilder/BlockBuilder';
+
+// this file  serves the first block builder step before moving to the manage screen
+// renders the block builder to add first block
+
 function GalleryFill( ) {
+
+
 
   const dispatch = useDispatch()
 
