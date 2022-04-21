@@ -113,7 +113,7 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
         for (let i = 0; i < 4; i++  ){
             randomStrArr[i] = generators[randomGenerator()]
         }
-        // smash strings together, remove characters and spaces, limit to 20, and return it
+        // smash strings together, remove characters and spaces, limit to btwn 6-27, and return it
         const randomStringMinLength = Math.floor(Math.random() * (6 - 1) + 1)
         const randomStringMaxLength = Math.floor(Math.random() * (27 - 20) + 20)
         const string = randomStrArr.join("").replace(/\s/g, '').replace(/[^a-z0-9]/gi, '').substring(randomStringMinLength, randomStringMaxLength);

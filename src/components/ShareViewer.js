@@ -144,7 +144,7 @@ function ShareViewer() {
               tidings: something to share
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              Tidings was created to make it easy to quickly send a full screen gallery of images to a friend. 
+              Tidings was created to make sending a full screen gallery of images easy. 
             </Typography>
             <Box>
               <Button color="pink" onClick={handleSignUpClick}>sign up</Button>
