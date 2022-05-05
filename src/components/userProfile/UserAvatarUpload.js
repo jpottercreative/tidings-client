@@ -35,7 +35,7 @@ const handleSubmit = e => {
   e.preventDefault();
   const formData = new FormData()
   formData.append("avatar", avatarImageUpload)
-  fetch(`http://localhost:3000/profile-photo/${currentUser.id}`, {
+  fetch(`https://tidings-server.herokuapp.com/profile-photo/${currentUser.id}`, {
     method: 'PATCH',
     headers: {
       "Authorization": `Bearer ${currentUser.token}`

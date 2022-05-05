@@ -56,7 +56,7 @@ function GalleryStart(  ) {
     formData.append("title", newGalleryEstablish.title)
     formData.append("description", newGalleryEstablish.description)
     formData.append("published", false)
-    fetch(`http://localhost:3000/new-gallery/`, {
+    fetch(`https://tidings-server.herokuapp.com/new-gallery/`, {
       method: 'POST',
       headers: {
         "Authorization": `Bearer ${currentUser.token}`

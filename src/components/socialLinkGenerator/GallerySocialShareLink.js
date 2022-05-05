@@ -33,7 +33,7 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
   
   //initialize our state
   useEffect(() => {
-    setNewShareLink(share_url || `http://localhost:3006/share/${makeRandomStr()}`)
+    setNewShareLink(share_url || `https://tidings-server.herokuapp.com/share/${makeRandomStr()}`)
     setIsShareable((isShareable) => share_url ? true : false)
   },[])
  
@@ -61,7 +61,7 @@ function GallerySocialShareLink( { share_url, gallery_id } ) {
       share_url: newShareLink
     }
     console.log("newsharelink to server", newShareLink)
-    fetch(`http://127.0.0.1:3000/gallery/${gallery_id}`, {
+    fetch(`https://tidings-server.herokuapp.com/gallery/${gallery_id}`, {
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json",

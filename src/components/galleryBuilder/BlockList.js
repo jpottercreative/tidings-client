@@ -33,7 +33,7 @@ function BlockList( {  } ) {
  // builder - which requires a good token.  But, the coda and publish
  // function require token auth
   useEffect(() => {
-    fetch(`http://localhost:3000/gallery/${gallery.id}/blocks`,{
+    fetch(`https://tidings-server.herokuapp.com/gallery/${gallery.id}/blocks`,{
       method: 'GET',
       headers: {
         "Authorization": `Bearer ${currentUser.token}`
@@ -51,7 +51,7 @@ function BlockList( {  } ) {
 
   function handleRefresh(){
     setRefreshing(true)
-    fetch(`http://localhost:3000/gallery/${gallery.id}/blocks`,{
+    fetch(`https://tidings-server.herokuapp.com/gallery/${gallery.id}/blocks`,{
       method: 'GET',
       headers: {
         "Authorization": `Bearer ${currentUser.token}`

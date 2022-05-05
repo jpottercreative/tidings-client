@@ -42,7 +42,7 @@ function App( ) {
     //we use this to check that we are logged in
     // in the future this move to global useFetch hook and global messaging
 
-    fetch('http://127.0.0.1:3000/member-data', {
+    fetch('https://tidings-server.herokuapp.com/member-data', {
             method: "GET",
             headers: {
             "Content-Type": "application/json",

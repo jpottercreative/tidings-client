@@ -43,7 +43,7 @@ function ShareViewer() {
     // since the idea here is that they are a social-friendly link, we intentionally *don't* make a RESTful route
     // the gallery builder is restful, but the shareside is not
     function goFetch(){
-        fetch(`http://localhost:3000/share/${params.id}/`)
+        fetch(`https://tidings-server.herokuapp.com/share/${params.id}/`)
         .then((response) => {
             if (response.ok) { 
              return response.json();

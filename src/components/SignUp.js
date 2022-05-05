@@ -65,7 +65,7 @@ function SignUp() {
             }
         }
         // console.log("sending this to server", JSON.stringify(userToSignUp))
-        await fetch('http://localhost:3000/users', {
+        await fetch('https://tidings-server.herokuapp.com/users', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

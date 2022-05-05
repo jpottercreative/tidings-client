@@ -92,7 +92,7 @@ function BlockBuilder( { handleCloseBlockBuilder, handleResetList } ) {
     formData.append("text_align", newBlock.textAlign)
     formData.append("font", newBlock.font)
     formData.append("block_type", newBlock.type)
-    fetch(`http://localhost:3000/new-block/`, {
+    fetch(`https://tidings-server.herokuapp.com/new-block/`, {
       method: 'POST',
       headers: {
         "Authorization": `Bearer ${currentUser.token}`

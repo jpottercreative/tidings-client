@@ -52,7 +52,7 @@ function GalleryPresentation() {
   useEffect(() => {
     dispatch(showSpinner());
 
-    fetch('http://localhost:3000/user-galleries', {
+    fetch('https://tidings-server.herokuapp.com/user-galleries', {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${currentToken}`
@@ -103,7 +103,7 @@ function GalleryPresentation() {
     // console.log(e.target.name)
     dispatch(showSpinner());
     const gallery_id = e.target.name
-    fetch(`http://localhost:3000/gallery/${gallery_id}/blocks`, {
+    fetch(`https://tidings-server.herokuapp.com/gallery/${gallery_id}/blocks`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${currentToken}`

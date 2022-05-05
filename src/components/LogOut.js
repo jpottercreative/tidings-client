@@ -39,7 +39,7 @@ function LogOut() {
     async function revoke(){
       // const token = `Bearer ${currentUser.token}`
     const currentToken = localStorage.getItem("token")
-      fetch('http://localhost:3000/users/sign_out', {
+      fetch('https://tidings-server.herokuapp.com/users/sign_out', {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

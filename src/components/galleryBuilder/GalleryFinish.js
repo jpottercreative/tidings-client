@@ -42,7 +42,7 @@ function GalleryFinish() {
     
     // again we are authorizing based on token
     // we write agains the actual gallery we have started
-    fetch(`http://127.0.0.1:3000/gallery/${gallery.id}`, {
+    fetch(`https://tidings-server.herokuapp.com/gallery/${gallery.id}`, {
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json",
