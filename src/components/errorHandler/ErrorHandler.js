@@ -84,7 +84,6 @@ function ErrorHandler() {
       // console.log(error)
   return (
     <>
-        
         <Snackbar
                 open={error.occurred}
                 autoHideDuration={2000}

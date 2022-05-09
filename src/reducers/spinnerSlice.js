@@ -12,13 +12,16 @@ const slice = createSlice({
     reducers: {
         showSpinner: state => {
             state.isSpinnerShowing = !state.isSpinnerShowing
+        },
+        hideSpinner: state => {
+            state.isSpinnerShowing = false
         }
     }
 })
 
 // actions
-const { showSpinner } = slice.actions
+const { showSpinner, hideSpinner } = slice.actions
 
 // exports
-export { showSpinner }
+export { showSpinner, hideSpinner }
 export default slice.reducer

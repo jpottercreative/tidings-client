@@ -21,12 +21,14 @@ import Paper from '@mui/material/Paper';
 import Spinner from './components/Spinner';
 import GalleryBuilder from './components/galleryBuilder/GalleryBuilder'
 import GalleryPresentation from './components/galleryPresentation/GalleryPresentation'
-import { showSpinner } from './reducers/spinnerSlice'
+import { showSpinner, hideSpinner } from './reducers/spinnerSlice'
 import { setError } from './reducers/errorSlice'
 import ErrorHandler from './components/errorHandler/ErrorHandler';
 // import GalleryShow from './components/galleryPresentation/GalleryShow';
 import ShareViewer from './components/ShareViewer';
 import NotFound from './components/NotFound';
+import HomeFeatures from './components/homepage/HomeFeatures';
+import Messenger from './components/Messenger';
 
 // our main holder for...damn near everything
 
@@ -62,13 +64,13 @@ function App( ) {
             avatar: data.avatar ? data.avatar : '',
             token: currentToken
           }))
-          dispatch(showSpinner());
+          dispatch(hideSpinner());
         })
         .catch((error) => {
-          // console.log(error)
-          renderUserError(error)
+          console.log(error)
+          // renderUserError(error)
           revoke()
-          dispatch(showSpinner())
+          dispatch(hideSpinner())
         })
   }, [])
 
@@ -90,16 +92,16 @@ function App( ) {
   }
   
 // this is getting closer to our global handler - but currently only fetch errors are in global state
-function renderUserError(error) {
-  // console.log("error render", error)
-  const newError = {
-    text: error.statusText,
-    occurred: true, 
-    code: error.status
-  }
-  dispatch(setError(newError))
+// function renderUserError(error) {
+//   // console.log("error render", error)
+//   const newError = {
+//     text: error.statusText,
+//     occurred: true, 
+//     code: error.status
+//   }
+//   dispatch(setError(newError))
 
-}
+// }
 
 // please make a separate file for this jon, seriously
 const appMode = createTheme({
@@ -169,6 +171,7 @@ const appStyle = {
                           <Paper style={appPaper}>
                             <Routes>
                               <Route path="/" element={<HomePage/>}/>
+                              <Route path="/homey" element={<HomeFeatures/>}/>
                               <Route path="/share/:id" element={<ShareViewer />}/>
                               <Route path="/profile" element={<UserProfile/>} />
                               <Route path="/gallery-builder" element={<GalleryBuilder/>} />
@@ -183,7 +186,8 @@ const appStyle = {
                   </Box>
                   </Grid>
               </Grid>
-            <ErrorHandler />
+            <Messenger/>
+            {/* <ErrorHandler /> */}
             </ThemeProvider>
         </BrowserRouter>
       </Container>

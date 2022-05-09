@@ -6,6 +6,7 @@ import spinnerReducer from "./reducers/spinnerSlice";
 import galleryReducer from "./reducers/gallerySlice";
 import errorReducer from "./reducers/errorSlice";
 import blockMessageReducer from "./reducers/blockMessageSlice";
+import messageReducer from "./reducers/messageSlice"
 
 // all our reducers in one place
 
@@ -18,6 +19,7 @@ const store = configureStore({
         'gallery': galleryReducer,
         'error': errorReducer,
         'blockMessage' : blockMessageReducer,
+        'message' : messageReducer,
     }
 })
 
