@@ -6,7 +6,6 @@ import Container from '@mui/material/Container';
 import { useSelector, useDispatch } from "react-redux"
 import Header from './components/Header'
 import HomePage from './HomePage';
-import { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -23,7 +22,6 @@ import GalleryBuilder from './components/galleryBuilder/GalleryBuilder'
 import GalleryPresentation from './components/galleryPresentation/GalleryPresentation'
 import { showSpinner, hideSpinner } from './reducers/spinnerSlice'
 import { setError } from './reducers/errorSlice'
-import ErrorHandler from './components/errorHandler/ErrorHandler';
 // import GalleryShow from './components/galleryPresentation/GalleryShow';
 import ShareViewer from './components/ShareViewer';
 import NotFound from './components/NotFound';
@@ -90,18 +88,6 @@ function App( ) {
       code: 401
     }))
   }
-  
-// this is getting closer to our global handler - but currently only fetch errors are in global state
-// function renderUserError(error) {
-//   // console.log("error render", error)
-//   const newError = {
-//     text: error.statusText,
-//     occurred: true, 
-//     code: error.status
-//   }
-//   dispatch(setError(newError))
-
-// }
 
 // please make a separate file for this jon, seriously
 const appMode = createTheme({
@@ -181,13 +167,13 @@ const appStyle = {
                           </Paper>
                       </Grid>
                   </Paper>
+                  {/* made with love footer */}
                   <Box sx={{position: "absolute", right: "25px", bottom: "25px", size: "80%"}}>
                     <Typography variant="overline">Made with <a target="_blank" rel="noreferrer" style={{color: "pink", textDecoration: "none"}} href="http://mrjonathanpotter.com/">♥</a> in Oregon</Typography>
                   </Box>
                   </Grid>
               </Grid>
             <Messenger/>
-            {/* <ErrorHandler /> */}
             </ThemeProvider>
         </BrowserRouter>
       </Container>

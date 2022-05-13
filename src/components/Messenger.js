@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux"
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import { cancelMessage } from '../reducers/messageSlice'
 import { cancelError } from '../reducers/errorSlice'
+import NearbyErrorIcon from '@mui/icons-material/NearbyError';
 
 function Messenger( ) {
   // the component is always mounted - is this bad?
@@ -20,8 +21,7 @@ function Messenger( ) {
       if (reason === 'clickaway') {
         return;
       }
-      dispatch(cancelMessage())
-      dispatch(cancelError())
+      message.show ? dispatch(cancelMessage()) : dispatch(cancelError())
     } 
 
     //use Alert for this because of the forwarding refs
@@ -31,12 +31,12 @@ function Messenger( ) {
      ref={ref} variant="filled" 
      {...props} 
      color={error.occurred ? "error" : "pink"}
-     icon={<AutoAwesomeOutlinedIcon/>} 
+     icon={message.show ? <AutoAwesomeOutlinedIcon/> : <NearbyErrorIcon/>} 
      
      />;
   });
-  console.log(error.occurred)
-  console.log(message.show)
+console.log(error)
+console.log(message)
   return (
     <>
         <Snackbar

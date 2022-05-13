@@ -20,11 +20,7 @@ function toggleSignUpClick(){
     setIsSignUpShowing((isSignUpShowing) => isSignUpShowing = !isSignUpShowing)
   }
 
-
-
   const WelcomeOrLogin = () => {return isSignUpShowing ? <SignUp/> : <Login/>}
-  
-
   const homeComponents = {
     padding: "1em",
     // backgroundColor: "pink"
@@ -55,7 +51,6 @@ const homeElevation = 0
           alignItems="center">
             <Grid item xs={12}>
              {isWelcomeShowing ? <HomeLandingWelcome isWelcomeShowing={isWelcomeShowing} disableWelcome={disableWelcome} setIsSignUpShowing={setIsSignUpShowing} /> : <WelcomeOrLogin />}
-      
             </Grid>
             <Grid item xs={12} sx={{color: "white"}} >
               {isWelcomeShowing ? null : <Button fullWidth variant="contained" onClick={toggleSignUpClick} id="sign_up_toggle" color={isSignUpShowing ? "lightblue" : "pink"}> {isSignUpShowing ? "Log in instead" : "Sign up instead"}</Button>}

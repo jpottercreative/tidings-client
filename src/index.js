@@ -5,8 +5,6 @@ import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import store from "./store"
 import { Provider } from "react-redux"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ShareViewer from './components/ShareViewer';
 // import bromideMainTheme from "./themes/bromideTheme"
 
 // the main index - pretty standard

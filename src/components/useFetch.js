@@ -41,7 +41,7 @@ axios.defaults.baseURL = 'https://tidings-server.herokuapp.com';
             const newError = {
               text: error.message,
               occurred: true, 
-              code: 500
+              code: error.code
             }
             dispatch(setError(newError))
           
